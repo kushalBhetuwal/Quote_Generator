@@ -1,11 +1,17 @@
-function narcissistic(value) {
- let m = String(value).split("").reduce((acc,current)=>acc + Math.pow(Number(current), String(value).length), 0)
- console.log(m)
+function toCamelCase(str){
 
- return m % String(value) ? false:true
+    word = /[-_]+/g;
 
+    newword = str.split(word);
+    console.log(newword);
+    let array =[newword[0]];
+    for(let i=1; i<newword.length; i++){
+          let item = newword[i].charAt(0).toUpperCase() + newword[i].slice(1);
+          array.push(item);
+    }
 
-  }
+    return array.join('')
 
-  console.log(narcissistic(153))
-  
+}
+
+console.log(toCamelCase("the-stealth-warriorr"));
